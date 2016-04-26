@@ -1,1 +1,4 @@
 .idea/*
+
+# go build default output path
+EastCLI

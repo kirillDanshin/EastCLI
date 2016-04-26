@@ -78,40 +78,41 @@ func (M Module) CheckName(name string) bool {
 	}
 	return false
 }
+
 type Option struct {
-	Name string `json:"option"`
-	Value struct{
-		Type string `json:"type"`
+	Name  string `json:"option"`
+	Value struct {
+		Type  string `json:"type"`
 		Value string `json:"value"`
-	      } `json:"value"`
+	} `json:"value"`
 }
 type ShowOptions struct {
-	Args []Option `json:"args"`
-	Command string `json:"command"`
+	Args    []Option `json:"args"`
+	Command string   `json:"command"`
 }
 type ModuleOptions struct {
 	Options ShowOptions
-	Name string
+	Name    string
 }
 type ModuleRunArgs struct {
-	ModuleName string `json:"module_name"`
-	Listener bool `json:"use_listener"`
-	Option []Option `json:"options"`
+	ModuleName string   `json:"module_name"`
+	Listener   bool     `json:"use_listener"`
+	Option     []Option `json:"options"`
 }
 type ModuleRun struct {
-	Args ModuleRunArgs `json:"args"`
-	Command string `json:"command"`
+	Args    ModuleRunArgs `json:"args"`
+	Command string        `json:"command"`
 }
 type ProgrammStatus struct {
-	ws *websocket.Conn
-	Path        string
-	ModuleName  string
-	MessageEast string
-	MdlOptions []Option
-	State string
+	ws               *websocket.Conn
+	Path             string
+	ModuleName       string
+	MessageEast      string
+	MdlOptions       []Option
+	State            string
 	AvailableModules []Module
 	AvailableCommand []string
-	MdlNumb int
-	RunModule ModuleRun
-	UseListener bool
+	MdlNumb          int
+	RunModule        ModuleRun
+	UseListener      bool
 }
